@@ -1,4 +1,4 @@
-# Функція для виводу ігрової дошки
+
 def print_board(board):
     print("     1   2   3")
     print("   " + "┏━━━┳━━━┳━━━┓")
@@ -10,19 +10,17 @@ def print_board(board):
     print("   ┗━━━┻━━━┻━━━┛")
     print()
 
-# Функція для перевірки переможця
+
 def check_winner(board, player):
-    # Перевірка горизонтальних ліній
+
     for row in board:
         if all(cell == player for cell in row):
             return True
 
-    # Перевірка вертикальних ліній
     for col in range(3):
         if all(board[row][col] == player for row in range(3)):
             return True
 
-    # Перевірка діагоналей
     if all(board[i][i] == player for i in range(3)):
         return True
 
@@ -31,7 +29,6 @@ def check_winner(board, player):
 
     return False
 
-# Головна функція гри
 def play_game():
     board = [[" " for _ in range(3)] for _ in range(3)]
     current_player = "X"
@@ -76,5 +73,4 @@ def play_game():
 
         current_player = "O" if current_player == "X" else "X"
 
-# Запускаємо гру
 play_game()
